@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Lato.ttf",
+      "sha1": "e923c72eda5e50a87e18ff5c71e9ef4b3b6455a3"
+    },
+    {
+      "path": "assets/fonts/Oswald.ttf",
+      "sha1": "d16c1dcb19e0e7572d2dea9d7445c0506c20b25d"
+    }
+  ]
+}

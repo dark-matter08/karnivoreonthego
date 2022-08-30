@@ -17,7 +17,7 @@ const SearchContainer = styled(View, {
 const RestaurantListContainer = styled(View, {
   padding: theme.spacing.md,
   flex: 1,
-  backgroundColor: theme.colors.brand.primary,
+  backgroundColor: theme.colors.bg.primary,
 });
 
 export const RestaurantsScreen = () => (

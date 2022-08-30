@@ -5,12 +5,14 @@ import styled from 'react-native-styled-components';
 import {theme} from '../../../infrastructure/theme';
 
 const Title = styled(Text, {
-  padding: theme.spacing.md,
+  fontSize: theme.sizes.md,
+  fontFamily: theme.fonts.body,
+  padding: theme.spacing.sm,
   color: theme.colors.ui.primary,
 });
 
 const RestaurantCardCover = styled(Card.Cover, {
-  padding: 20,
+  padding: theme.spacing.sm,
   backgroundColor: theme.colors.bg.primary,
 });
 
@@ -20,7 +22,7 @@ const RestaurantCard = styled(Card, {
 
 export const RestaurantInfoCard = ({restaurant = {}}) => {
   const {
-    name = 'some restaurant',
+    name = 'Some Restaurant',
     icon,
     photos = [
       'https://www.foodiesfeed.com/wp-content/uploads/2022/03/strawberry-1024x761.jpg.webp',
