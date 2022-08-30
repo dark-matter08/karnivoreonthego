@@ -13,7 +13,8 @@
     "react": "18.0.0",
     "react-native": "0.69.5",
     "react-native-paper": "^4.12.4",
-    "react-native-styled-components": "^2.1.0"
+    "react-native-styled-components": "^2.1.0",
+    "react-native-svg": "^13.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

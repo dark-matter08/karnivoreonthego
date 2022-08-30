@@ -8,6 +8,10 @@
     {
       "path": "assets/fonts/Oswald.ttf",
       "sha1": "d16c1dcb19e0e7572d2dea9d7445c0506c20b25d"
+    },
+    {
+      "path": "assets/svg/star.js",
+      "sha1": "46f201fce0c70684c271db232a11f83691115706"
     }
   ]
 }
