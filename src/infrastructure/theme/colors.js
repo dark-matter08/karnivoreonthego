@@ -17,7 +17,7 @@ export const colors = {
     primary: '#FFFFFF',
     secondary: '#F1F1F1',
   },
-  icon: {
+  text_i: {
     primary: '#262626',
     secondary: '#757575',
     disabled: '#9C9C9C',
