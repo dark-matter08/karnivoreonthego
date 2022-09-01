@@ -10,6 +10,10 @@
       "sha1": "d16c1dcb19e0e7572d2dea9d7445c0506c20b25d"
     },
     {
+      "path": "assets/svg/open.js",
+      "sha1": "019357de4381365d074cf0e9244aa04c680c6be6"
+    },
+    {
       "path": "assets/svg/star.js",
       "sha1": "46f201fce0c70684c271db232a11f83691115706"
     }

@@ -17,6 +17,7 @@
 		45B1B13D9EA74495A24F814F /* Lato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68070550B1A0454BA1B06306 /* Lato.ttf */; };
 		3843FB37F4494292A2D8CC5D /* Oswald.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3A41DDFB3E541B1B04AA656 /* Oswald.ttf */; };
 		CAB46B8691EE44CD9DA5C91C /* star.js in Resources */ = {isa = PBXBuildFile; fileRef = 621F0CAA0E5243908DEC2C68 /* star.js */; };
+		4486CE789AF04732A0C83E07 /* open.js in Resources */ = {isa = PBXBuildFile; fileRef = 15327AB7BEEA42779601D68E /* open.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		68070550B1A0454BA1B06306 /* Lato.ttf */ = {isa = PBXFileReference; name = "Lato.ttf"; path = "../assets/fonts/Lato.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C3A41DDFB3E541B1B04AA656 /* Oswald.ttf */ = {isa = PBXFileReference; name = "Oswald.ttf"; path = "../assets/fonts/Oswald.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		621F0CAA0E5243908DEC2C68 /* star.js */ = {isa = PBXFileReference; name = "star.js"; path = "../assets/svg/star.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		15327AB7BEEA42779601D68E /* open.js */ = {isa = PBXFileReference; name = "open.js"; path = "../assets/svg/open.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				68070550B1A0454BA1B06306 /* Lato.ttf */,
 				C3A41DDFB3E541B1B04AA656 /* Oswald.ttf */,
 				621F0CAA0E5243908DEC2C68 /* star.js */,
+				15327AB7BEEA42779601D68E /* open.js */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				45B1B13D9EA74495A24F814F /* Lato.ttf in Resources */,
 				3843FB37F4494292A2D8CC5D /* Oswald.ttf in Resources */,
 				CAB46B8691EE44CD9DA5C91C /* star.js in Resources */,
+				4486CE789AF04732A0C83E07 /* open.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
