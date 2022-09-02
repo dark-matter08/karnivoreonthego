@@ -15,7 +15,7 @@ import {
   Address,
 } from './restaurant-info-styles';
 
-export const RestaurantInfoCard = ({restaurant = {}}) => {
+export const RestaurantInfoCard = ({restaurant}) => {
   const {
     name = 'Some Restaurant',
     icon = 'https://cdn1.iconfinder.com/data/icons/fillio-food-kitchen-and-cooking/48/food_-_dish-512.png',

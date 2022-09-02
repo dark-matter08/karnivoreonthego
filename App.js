@@ -3,24 +3,18 @@ import {StatusBar, View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as All from '@fortawesome/free-solid-svg-icons';
-import {restaurantsRequest} from './src/services/restaurants/restaurants.service';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
 import {RestaurantsScreen} from './src/features/restaurants/screens/restaurant.screens';
 import {theme} from './src/infrastructure/theme';
 import {Icon} from './src/components';
-
-restaurantsRequest()
-  .then(result => {
-    console.log(result);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+import {RestaurantContextProvider} from './src/services/restaurants/restaurants.context';
+import {LocationContextProvider} from './src/services/location/location.context';
 
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-  Restaurant: All.faUtensils,
+  Restaurants: All.faUtensils,
   Map: All.faLocationCrosshairs,
   Settings: All.faGear,
 };
@@ -47,21 +41,33 @@ const screenOptions = ({route}) => {
     tabBarIcon: ({color, size}) => {
       return <Icon icon={iconName} size={size} color={color} />;
     },
-    tabBarActiveTintColor: theme.colors.brand.secondary,
+    // tabBarShowLabel: false,
+    tabBarActiveTintColor: theme.colors.brand.primary,
     tabBarInactiveTintColor: theme.colors.text_i.disabled,
+    // tabBarActiveBackgroundColor: theme.colors.brand.secondary,
+    tabBarHideOnKeyboard: true,
+    headerShown: false,
+    // tabBarBackground: theme.colors.brand.primary,
   };
 };
 
 export default function App() {
   return (
     <>
-      <NavigationContainer>
-        <Tab.Navigator screenOptions={screenOptions}>
-          <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
-          <Tab.Screen name="Map" component={MapScreen} />
-          <Tab.Screen name="Settings" component={SettingsScreen} />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <LocationContextProvider>
+        <RestaurantContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator
+              screenOptions={screenOptions}
+              activeColor={theme.colors.brand.secondary}
+              barStyle={{backgroundColor: theme.colors.brand.primary}}>
+              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+              <Tab.Screen name="Map" component={MapScreen} />
+              <Tab.Screen name="Settings" component={SettingsScreen} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantContextProvider>
+      </LocationContextProvider>
       <StatusBar style="auto" />
     </>
   );
