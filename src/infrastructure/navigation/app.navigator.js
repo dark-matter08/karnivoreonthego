@@ -3,12 +3,11 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as All from '@fortawesome/free-solid-svg-icons';
-// import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
-import RestaurantsScreen from '../../features/restaurants/screens/restaurant.screens';
 import {theme} from '../theme';
 import {Icon} from '../../components';
 import {RestaurantsNavigator} from './restaurants.navigator';
+import {MapScreen} from '../../features/map/screens/map.screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,14 +21,6 @@ function SettingsScreen() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text style={{color: theme.colors.text_i.success}}>Settings!</Text>
-    </View>
-  );
-}
-
-function MapScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{color: theme.colors.text_i.success}}>Map Screen!</Text>
     </View>
   );
 }

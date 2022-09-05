@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
-import {SafeAreaView, FlatList} from 'react-native';
-import * as All from '@fortawesome/free-solid-svg-icons';
+import {SafeAreaView, FlatList, TouchableOpacity} from 'react-native';
 import styled from 'react-native-styled-components';
 
 import {RestaurantInfoCard} from '../components/restaurant-info-card.component';
@@ -18,7 +17,7 @@ const RestaurantListContainer = styled(FlatList, {
   // backgroundColor: theme.colors.bg.primary,
 });
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({navigation}) => {
   const {isLoading, error, restaurants} = useContext(RestaurantContext);
   return (
     <>
@@ -30,9 +29,16 @@ export const RestaurantsScreen = () => {
             data={restaurants}
             renderItem={({item}) => {
               return (
-                <Spacer position={'bottom'} size={'md'}>
-                  <RestaurantInfoCard restaurant={item} />
-                </Spacer>
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate('RestaurantDetail', {
+                      restaurant: item,
+                    })
+                  }>
+                  <Spacer position={'bottom'} size={'md'}>
+                    <RestaurantInfoCard restaurant={item} />
+                  </Spacer>
+                </TouchableOpacity>
               );
             }}
             keyExtractor={item => item.name}

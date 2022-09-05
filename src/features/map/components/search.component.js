@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Searchbar} from 'react-native-paper';
 import styled from 'react-native-styled-components';
 import {View} from 'react-native';
@@ -8,7 +8,10 @@ import {theme} from '../../../infrastructure/theme';
 
 const SearchContainer = styled(View, {
   padding: theme.spacing.sm,
-  backgroundColor: theme.colors.bg.primary,
+  position: 'absolute',
+  zIndex: 999,
+  top: 10,
+  width: '100%',
 });
 
 export const Search = () => {
@@ -24,7 +27,7 @@ export const Search = () => {
       <Searchbar
         placeholder="Search for a location"
         icon={{
-          uri: 'https://cdn-icons-png.flaticon.com/512/751/751463.png',
+          uri: 'https://cdn-icons-png.flaticon.com/512/2901/2901609.png',
         }}
         clearIcon={{
           uri: 'https://cdn-icons-png.flaticon.com/512/2732/2732657.png',
