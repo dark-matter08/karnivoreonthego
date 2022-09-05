@@ -35,6 +35,7 @@ export const RestaurantContextProvider = ({children}) => {
   };
 
   useEffect(() => {
+    console.log('====== restau gps =====');
     console.log(location);
     if (location) {
       const locationString = `${location.lat},${location.lng}`;

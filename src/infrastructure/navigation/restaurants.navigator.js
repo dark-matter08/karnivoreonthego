@@ -1,8 +1,8 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RestaurantsScreen} from '../../features/restaurants/screens/restaurant.screens';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const RestaurantStack = createNativeStackNavigator();
+const RestaurantStack = createStackNavigator();
 
 export const RestaurantsNavigator = () => {
   return (

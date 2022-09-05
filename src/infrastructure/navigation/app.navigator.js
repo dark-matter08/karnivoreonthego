@@ -5,7 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as All from '@fortawesome/free-solid-svg-icons';
 // import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
-// import RestaurantsScreen from '../../features/restaurants/screens/restaurant.screens';
+import RestaurantsScreen from '../../features/restaurants/screens/restaurant.screens';
 import {theme} from '../theme';
 import {Icon} from '../../components';
 import {RestaurantsNavigator} from './restaurants.navigator';
@@ -44,21 +44,20 @@ const screenOptions = ({route}) => {
     tabBarInactiveTintColor: theme.colors.text_i.disabled,
     tabBarHideOnKeyboard: true,
     headerShown: false,
-    // tabBarShowLabel: false,
-    // tabBarActiveBackgroundColor: theme.colors.brand.secondary,
-    // tabBarBackground: theme.colors.brand.primary,
   };
 };
 
 export const AppNavigator = () => {
-  <NavigationContainer>
-    <Tab.Navigator
-      screenOptions={screenOptions}
-      activeColor={theme.colors.brand.secondary}
-      barStyle={{backgroundColor: theme.colors.brand.primary}}>
-      <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
-  </NavigationContainer>;
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={screenOptions}
+        activeColor={theme.colors.brand.secondary}
+        barStyle={{backgroundColor: theme.colors.brand.primary}}>
+        <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+        <Tab.Screen name="Map" component={MapScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
 };
