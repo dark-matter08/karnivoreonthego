@@ -32,6 +32,7 @@ export const RestaurantCardCover = styled(Card.Cover, {
 
 export const RestaurantCard = styled(Card, {
   backgroundColor: theme.colors.bg.primary,
+  // position: 'relative',
 });
 
 export const Section = styled(View, {

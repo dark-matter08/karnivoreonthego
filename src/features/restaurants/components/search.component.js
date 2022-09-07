@@ -11,7 +11,7 @@ const SearchContainer = styled(View, {
   backgroundColor: theme.colors.bg.primary,
 });
 
-export const Search = () => {
+export const Search = ({isFavouritesToggled, onFavouritesToggle}) => {
   const {keyword, search} = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
 
@@ -24,8 +24,11 @@ export const Search = () => {
       <Searchbar
         placeholder="Search for a location"
         icon={{
-          uri: 'https://cdn-icons-png.flaticon.com/512/751/751463.png',
+          uri: isFavouritesToggled
+            ? 'https://cdn-icons-png.flaticon.com/512/3048/3048844.png'
+            : 'https://cdn-icons-png.flaticon.com/512/2724/2724657.png',
         }}
+        onIconPress={onFavouritesToggle}
         clearIcon={{
           uri: 'https://cdn-icons-png.flaticon.com/512/2732/2732657.png',
         }}

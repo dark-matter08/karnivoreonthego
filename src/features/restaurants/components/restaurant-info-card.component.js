@@ -2,7 +2,7 @@ import React from 'react';
 import {SvgXml} from 'react-native-svg';
 import star from '../../../../assets/svg/star';
 import open from '../../../../assets/svg/open';
-import {Spacer, CustomText} from '../../../components';
+import {Spacer, CustomText, Favourite} from '../../../components';
 
 import {
   Info,
@@ -28,11 +28,11 @@ export const RestaurantInfoCard = ({restaurant}) => {
     isClosedTemporarily = true,
   } = restaurant;
 
-  // const ratingArray = [1, 2, 3, 4];
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (
     <RestaurantCard elevation={10}>
+      <Favourite restaurant={restaurant} />
       <RestaurantCardCover key={name} source={{uri: photos[0]}} />
       <Info>
         <CustomText variant="label">{name}</CustomText>
