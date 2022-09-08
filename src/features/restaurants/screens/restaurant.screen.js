@@ -36,26 +36,14 @@ export const RestaurantsScreen = ({navigation}) => {
           onFavouritesToggle={() => changeFavBarState()}
         />
         {barToggled && (
-          <FavouriteBar
-            favourites={favourites}
-            onNavigate={navigation.navigate}
-          />
+          <FavouriteBar favourites={favourites} navigation={navigation} />
         )}
         {!isLoading && (
           <RestaurantListContainer
             data={restaurants}
             renderItem={({item}) => {
               return (
-                <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate('RestaurantDetail', {
-                      restaurant: item,
-                    })
-                  }>
-                  <Spacer position={'bottom'} size={'md'}>
-                    <RestaurantInfoCard restaurant={item} />
-                  </Spacer>
-                </TouchableOpacity>
+                <RestaurantInfoCard navigation={navigation} restaurant={item} />
               );
             }}
             keyExtractor={item => item.name}

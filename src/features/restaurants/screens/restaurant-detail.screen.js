@@ -4,7 +4,7 @@ import {List} from 'react-native-paper';
 
 import {RestaurantInfoCard} from '../components/restaurant-info-card.component';
 
-export const RestaurantDetailScreen = ({route}) => {
+export const RestaurantDetailScreen = ({route, navigation}) => {
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
   const [lunchExpanded, setLunchExpanded] = useState(false);
   const [dinnerExpanded, setDinnerExpanded] = useState(false);
@@ -13,7 +13,7 @@ export const RestaurantDetailScreen = ({route}) => {
   const {restaurant} = route.params;
   return (
     <SafeAreaView>
-      <RestaurantInfoCard restaurant={restaurant} />
+      <RestaurantInfoCard restaurant={restaurant} navigation={navigation} />
       <View style={{flexGrow: 1}}>
         <ScrollView>
           <List.Accordion
