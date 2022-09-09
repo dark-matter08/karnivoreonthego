@@ -25,7 +25,7 @@ export const Search = () => {
   return (
     <SearchContainer>
       <Searchbar
-        placeholder="Search for a location"
+        placeholder="Search for a location on the map"
         icon={{
           uri: 'https://cdn-icons-png.flaticon.com/512/2901/2901609.png',
         }}
