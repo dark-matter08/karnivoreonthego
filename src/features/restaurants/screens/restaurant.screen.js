@@ -9,6 +9,7 @@ import {RestaurantContext} from '../../../services/restaurants/restaurants.conte
 import Loader from '../../../components/utilities/loader';
 import {Search} from '../components/search.component';
 import {FavouritesContext} from '../../../services/favourites/favourites.context';
+import {FadeInView} from '../../../components/animations/fade.animation';
 
 const SafeArea = styled(SafeAreaView, {
   flex: 1,
@@ -43,7 +44,12 @@ export const RestaurantsScreen = ({navigation}) => {
             data={restaurants}
             renderItem={({item}) => {
               return (
-                <RestaurantInfoCard navigation={navigation} restaurant={item} />
+                <FadeInView>
+                  <RestaurantInfoCard
+                    navigation={navigation}
+                    restaurant={item}
+                  />
+                </FadeInView>
               );
             }}
             keyExtractor={item => item.name}

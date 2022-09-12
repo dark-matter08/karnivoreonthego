@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+import {SafeAreaView, View, TouchableOpacity} from 'react-native';
 import {List, Avatar} from 'react-native-paper';
 import styled from 'react-native-styled-components';
 import {CustomText, Spacer} from '../../../components';
@@ -25,13 +25,15 @@ export const SettingsScreen = ({navigation}) => {
   return (
     <SafeArea>
       <AvatarContainer>
-        <Avatar.Icon
-          size={180}
-          icon={{
-            uri: 'https://cdn-icons-png.flaticon.com/512/4623/4623628.png',
-          }}
-          backgroundColor="#2182bd"
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
+          <Avatar.Icon
+            size={180}
+            icon={{
+              uri: 'https://cdn-icons-png.flaticon.com/512/4623/4623628.png',
+            }}
+            backgroundColor="#2182bd"
+          />
+        </TouchableOpacity>
         <Spacer position={'top'} size="lg">
           <CustomText variant="label">{user.email}</CustomText>
         </Spacer>
