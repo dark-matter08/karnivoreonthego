@@ -1,13 +1,14 @@
-import React, {useContext} from 'react';
-import {View, Text, Button} from 'react-native';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as All from '@fortawesome/free-solid-svg-icons';
 
 import {theme} from '../theme';
 import {Icon} from '../../components';
 import {RestaurantsNavigator} from './restaurants.navigator';
+import {SettingsNavigatior} from './settings.navigator';
+
 import {MapScreen} from '../../features/map/screens/map.screen';
-import {AuthenticationContext} from '../../services/authentication/authentication.context';
+
 import {RestaurantContextProvider} from '../../services/restaurants/restaurants.context';
 import {LocationContextProvider} from '../../services/location/location.context';
 import {FavouritesContextProvider} from '../../services/favourites/favourites.context';
@@ -17,17 +18,7 @@ const Tab = createBottomTabNavigator();
 const TAB_ICON = {
   Restaurants: All.faUtensils,
   Map: All.faLocationCrosshairs,
-  Settings: All.faGear,
-};
-
-const SettingsScreen = () => {
-  const {onLogout} = useContext(AuthenticationContext);
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{color: theme.colors.text_i.success}}>Settings!</Text>
-      <Button title="Logout" onPress={() => onLogout()} />
-    </View>
-  );
+  SettingsScreens: All.faGear,
 };
 
 const screenOptions = ({route}) => {
@@ -54,7 +45,7 @@ export const AppNavigator = () => {
             barStyle={{backgroundColor: theme.colors.brand.primary}}>
             <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
             <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
+            <Tab.Screen name="SettingsScreens" component={SettingsNavigatior} />
           </Tab.Navigator>
         </RestaurantContextProvider>
       </LocationContextProvider>

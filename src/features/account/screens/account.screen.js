@@ -1,11 +1,12 @@
 import React from 'react';
-import {Text} from 'react-native';
+import LottieView from 'lottie-react-native';
 import {
   AccountBackground,
   AccountContainer,
   AccountCover,
   AuthButton,
   AccountTitle,
+  AnimationWrapper,
 } from '../components/account.styles';
 import {theme} from '../../../infrastructure/theme';
 import {Spacer} from '../../../components';
@@ -16,6 +17,15 @@ export const AccountScreen = ({navigation}) => {
   return (
     <AccountBackground image={login_image}>
       <AccountCover />
+      <AnimationWrapper>
+        <LottieView
+          key="animation"
+          source={require('../../../../assets/animations/watermelon.json')}
+          autoPlay
+          loop
+          renderMode="cover"
+        />
+      </AnimationWrapper>
       <Spacer position={'top'} size={'lg'}>
         <AccountTitle variant="label">Meals To Go</AccountTitle>
       </Spacer>

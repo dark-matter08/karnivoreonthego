@@ -33,6 +33,14 @@ export const BareAccountTextInput = styled(TextInput, {
   height: 55,
 });
 
+export const AnimationWrapper = styled(View, {
+  width: '100%',
+  height: '40%',
+  position: 'absolute',
+  top: 30,
+  padding: theme.spacing.md,
+});
+
 export const AccountTitle = styled(Text, {
   fontSize: theme.fontSizes.h3,
   fontFamily: theme.fonts.body,
