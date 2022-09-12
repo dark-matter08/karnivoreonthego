@@ -1,6 +1,6 @@
 import React, {useState, createContext} from 'react';
 import {loginRequest, registrationRequest} from './authentication.service';
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 
 export const AuthenticationContext = createContext();
 
