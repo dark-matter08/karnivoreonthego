@@ -22,14 +22,11 @@ export const LocationContextProvider = ({children}) => {
       .then(locationTransform)
       .then(result => {
         setIsLoading(false);
-        console.log('====== Result =====');
         setLocation(result);
       })
       .catch(err => {
         setIsLoading(false);
         setError(err);
-        console.log('====== Error =====');
-        console.log(err);
       });
   }, [keyword]);
 
