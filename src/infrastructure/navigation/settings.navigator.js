@@ -13,7 +13,6 @@ const SettingsStack = createStackNavigator();
 export const SettingsNavigatior = ({route, navigation}) => {
   return (
     <SettingsStack.Navigator
-      headerMode="screen"
       screenOptions={{
         CardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
