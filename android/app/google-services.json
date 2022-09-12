@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "410370753040",
+    "project_id": "mealstogo-3ca1b",
+    "storage_bucket": "mealstogo-3ca1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410370753040:android:26e2c13373786529104095",
+        "android_client_info": {
+          "package_name": "com.karnivoreonthego"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410370753040-rv4hnjhljbj1ui1tne2bauor2j8b7tar.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karnivoreonthego",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "410370753040-e5i8frjuqp1lhu013rhj1ib2a0bfp24r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpdcsmxHokFi8Q4-ovoVe_UhTTFMBlyaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410370753040-e5i8frjuqp1lhu013rhj1ib2a0bfp24r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

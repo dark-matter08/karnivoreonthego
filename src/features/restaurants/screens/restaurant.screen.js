@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
-import {SafeAreaView, FlatList, TouchableOpacity} from 'react-native';
+import {SafeAreaView, FlatList} from 'react-native';
 import styled from 'react-native-styled-components';
 
 import {RestaurantInfoCard} from '../components/restaurant-info-card.component';
 import {theme} from '../../../infrastructure/theme';
-import {FavouriteBar, Spacer} from '../../../components';
+import {FavouriteBar} from '../../../components';
 import {RestaurantContext} from '../../../services/restaurants/restaurants.context';
 import Loader from '../../../components/utilities/loader';
 import {Search} from '../components/search.component';
