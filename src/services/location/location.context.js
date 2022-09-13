@@ -1,13 +1,9 @@
 import React, {createContext, useEffect, useState} from 'react';
-import {
-  locationRequest,
-  onlineLocationRequest,
-  locationTransform,
-} from './location.service';
+import {locationRequest, locationTransform} from './location.service';
 
 export const LocationContext = createContext();
 
-export const LocationContextProvider = ({children, mock = false}) => {
+export const LocationContextProvider = ({children}) => {
   const [keyword, setKeyword] = useState('Buea');
   const [location, setLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,39 +12,27 @@ export const LocationContextProvider = ({children, mock = false}) => {
   const onSearch = searchKeyword => {
     setKeyword(searchKeyword);
     setIsLoading(true);
+    setError(null);
   };
 
   useEffect(() => {
     if (!keyword.length) {
       return;
     }
-    if (mock === true) {
-      locationRequest(keyword.toLowerCase())
-        .then(locationTransform)
-        .then(result => {
-          setError(null);
-          setIsLoading(false);
-          setLocation(result);
-        })
-        .catch(err => {
-          setIsLoading(false);
-          setError(err);
-        });
-    } else {
-      onlineLocationRequest(keyword.toLowerCase())
-        .then(locationTransform)
-        .then(result => {
-          setError(null);
-          setIsLoading(false);
-          setLocation(result);
-        })
-        .catch(err => {
-          setIsLoading(false);
-          setError(err);
-          console.log(err);
-        });
-    }
-  }, [keyword, mock]);
+    locationRequest(keyword.toLowerCase())
+      .then(locationTransform)
+      .then(result => {
+        setError(null);
+        setIsLoading(false);
+        setLocation(result);
+        console.log('location from online fxn: ', result);
+      })
+      .catch(err => {
+        setIsLoading(false);
+        setError(err);
+        console.log('error from online fxn: ', err);
+      });
+  }, [keyword]);
 
   return (
     <LocationContext.Provider

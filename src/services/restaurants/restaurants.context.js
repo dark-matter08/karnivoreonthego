@@ -7,15 +7,11 @@ import React, {
 } from 'react';
 
 import {LocationContext} from '../location/location.context';
-import {
-  restaurantsRequest,
-  restaurantRequestOnline,
-  restaurantsTransform,
-} from './restaurants.service';
+import {restaurantsRequest, restaurantsTransform} from './restaurants.service';
 
 export const RestaurantContext = createContext();
 
-export const RestaurantContextProvider = ({children, mock = false}) => {
+export const RestaurantContextProvider = ({children}) => {
   const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -23,54 +19,31 @@ export const RestaurantContextProvider = ({children, mock = false}) => {
 
   const retrieveRestaurants = loc => {
     setIsLoading(true);
+    setError(null);
     setRestaurants([]);
-    setTimeout(() => {
-      restaurantsRequest(loc)
-        .then(restaurantsTransform)
-        .then(results => {
-          setError(null);
-          setIsLoading(false);
-          setRestaurants(results);
-          console.log('Offline Results: ', results);
-        })
-        .catch(err => {
-          setIsLoading(false);
-          setError(err);
-          console.log('Offline Errors: ', err);
-        });
-    }, 2000);
-  };
-
-  const retrieveRestaurantsOnline = loc => {
-    setIsLoading(true);
-    setRestaurants([]);
-    restaurantRequestOnline(loc)
+    restaurantsRequest(loc)
       .then(restaurantsTransform)
       .then(results => {
         setError(null);
         setIsLoading(false);
         setRestaurants(results);
-        console.log('Online Results: ', results);
+        console.log('Firebase fxn Results: ', results);
       })
       .catch(err => {
         setIsLoading(false);
         setError(err);
-        console.log('Online Errors: ', err);
+        console.log('Firebase fxn Errors: ', err);
       });
   };
 
   useEffect(() => {
     if (location) {
       const locationString = `${location.lat},${location.lng}`;
-      if (mock) {
-        retrieveRestaurants(locationString);
-      } else {
-        retrieveRestaurantsOnline(locationString);
-      }
+      retrieveRestaurants(locationString);
     } else {
       setRestaurants([]);
     }
-  }, [location, mock]);
+  }, [location]);
 
   return (
     <RestaurantContext.Provider value={{restaurants, isLoading, error}}>

@@ -1,21 +1,14 @@
 import camelize from 'camelize';
-import {locations} from './location.mock';
 import axios from 'axios';
+import {host, isMock} from '../../utils/env';
 
 const API_KEY = 'AIzaSyCkf-jwvZ1V0EwSg_SZkJBku4-woyzeLO4';
 
 export const locationRequest = searchTerm => {
-  return new Promise((resolve, reject) => {
-    const locationMock = locations[searchTerm];
-    if (!locationMock) {
-      reject('not found');
-    } else {
-      resolve(locationMock);
-    }
-  });
+  return fetch(`${host}/geocode?city=${searchTerm}&mock=${isMock}`).then(res =>
+    res.json(),
+  );
 };
-
-//
 
 export const onlineLocationRequest = searchTerm =>
   axios
