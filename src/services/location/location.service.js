@@ -1,5 +1,8 @@
 import camelize from 'camelize';
 import {locations} from './location.mock';
+import axios from 'axios';
+
+const API_KEY = 'AIzaSyCkf-jwvZ1V0EwSg_SZkJBku4-woyzeLO4';
 
 export const locationRequest = searchTerm => {
   return new Promise((resolve, reject) => {
@@ -11,6 +14,15 @@ export const locationRequest = searchTerm => {
     }
   });
 };
+
+//
+
+export const onlineLocationRequest = searchTerm =>
+  axios
+    .get(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${searchTerm}&key=${API_KEY}`,
+    )
+    .then(res => res.data);
 
 export const locationTransform = result => {
   const formattedResponse = camelize(result);

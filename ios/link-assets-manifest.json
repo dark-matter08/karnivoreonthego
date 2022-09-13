@@ -10,6 +10,18 @@
       "sha1": "d16c1dcb19e0e7572d2dea9d7445c0506c20b25d"
     },
     {
+      "path": "assets/svg/empty_loc.js",
+      "sha1": "efc98a520f33b83656f9f07404a8411486003afa"
+    },
+    {
+      "path": "assets/svg/err_map.js",
+      "sha1": "0903da4b598564d20209918332f73bf04fc38030"
+    },
+    {
+      "path": "assets/svg/error_loading.js",
+      "sha1": "9d0b5a53b36e879d9fe9b52fd12294125afdeab5"
+    },
+    {
       "path": "assets/svg/open.js",
       "sha1": "019357de4381365d074cf0e9244aa04c680c6be6"
     },

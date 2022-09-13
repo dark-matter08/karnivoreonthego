@@ -29,7 +29,6 @@ export const SettingsScreen = ({navigation}) => {
   const getProfilePicture = async usr => {
     const photoUri = await AsyncStorage.getItem(`${usr.uid}-photo`);
     setPhoto(photoUri);
-    console.log(photoUri);
   };
 
   useFocusEffect(

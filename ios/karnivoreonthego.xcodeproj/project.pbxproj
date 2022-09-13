@@ -18,6 +18,9 @@
 		3843FB37F4494292A2D8CC5D /* Oswald.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3A41DDFB3E541B1B04AA656 /* Oswald.ttf */; };
 		CAB46B8691EE44CD9DA5C91C /* star.js in Resources */ = {isa = PBXBuildFile; fileRef = 621F0CAA0E5243908DEC2C68 /* star.js */; };
 		4486CE789AF04732A0C83E07 /* open.js in Resources */ = {isa = PBXBuildFile; fileRef = 15327AB7BEEA42779601D68E /* open.js */; };
+		045C088EE55A4EE48616508C /* error_loading.js in Resources */ = {isa = PBXBuildFile; fileRef = F3D2FA0508B44839BB8DE814 /* error_loading.js */; };
+		9C4C2A4333C84EBC88D7CDE3 /* err_map.js in Resources */ = {isa = PBXBuildFile; fileRef = D1316AB03E3647D6BF03D5AC /* err_map.js */; };
+		85E523197A3F43C89FB1881D /* empty_loc.js in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC23C952584B4D804BE91F /* empty_loc.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		C3A41DDFB3E541B1B04AA656 /* Oswald.ttf */ = {isa = PBXFileReference; name = "Oswald.ttf"; path = "../assets/fonts/Oswald.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		621F0CAA0E5243908DEC2C68 /* star.js */ = {isa = PBXFileReference; name = "star.js"; path = "../assets/svg/star.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		15327AB7BEEA42779601D68E /* open.js */ = {isa = PBXFileReference; name = "open.js"; path = "../assets/svg/open.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F3D2FA0508B44839BB8DE814 /* error_loading.js */ = {isa = PBXFileReference; name = "error_loading.js"; path = "../assets/svg/error_loading.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D1316AB03E3647D6BF03D5AC /* err_map.js */ = {isa = PBXFileReference; name = "err_map.js"; path = "../assets/svg/err_map.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8DBC23C952584B4D804BE91F /* empty_loc.js */ = {isa = PBXFileReference; name = "empty_loc.js"; path = "../assets/svg/empty_loc.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,9 @@
 				C3A41DDFB3E541B1B04AA656 /* Oswald.ttf */,
 				621F0CAA0E5243908DEC2C68 /* star.js */,
 				15327AB7BEEA42779601D68E /* open.js */,
+				F3D2FA0508B44839BB8DE814 /* error_loading.js */,
+				D1316AB03E3647D6BF03D5AC /* err_map.js */,
+				8DBC23C952584B4D804BE91F /* empty_loc.js */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -269,6 +278,9 @@
 				3843FB37F4494292A2D8CC5D /* Oswald.ttf in Resources */,
 				CAB46B8691EE44CD9DA5C91C /* star.js in Resources */,
 				4486CE789AF04732A0C83E07 /* open.js in Resources */,
+				045C088EE55A4EE48616508C /* error_loading.js in Resources */,
+				9C4C2A4333C84EBC88D7CDE3 /* err_map.js in Resources */,
+				85E523197A3F43C89FB1881D /* empty_loc.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

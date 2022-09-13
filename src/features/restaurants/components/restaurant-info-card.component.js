@@ -14,6 +14,7 @@ import {
   SectionEnd,
   Icon,
   Address,
+  RatingCount,
 } from './restaurant-info-styles';
 
 export const RestaurantInfoCard = ({restaurant, navigation}) => {
@@ -52,6 +53,11 @@ export const RestaurantInfoCard = ({restaurant, navigation}) => {
                   );
                 })}
               </Rating>
+              <RatingCount
+                style={{justifyContent: 'center', alignItems: 'center'}}
+                variant={
+                  'caption'
+                }>{`- (${restaurant.userRatingsTotal})`}</RatingCount>
               <SectionEnd>
                 {isClosedTemporarily && (
                   <CustomText variant="error">CLOSED TEMPORARILY</CustomText>

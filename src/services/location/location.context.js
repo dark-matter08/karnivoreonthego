@@ -1,10 +1,14 @@
 import React, {createContext, useEffect, useState} from 'react';
-import {locationRequest, locationTransform} from './location.service';
+import {
+  locationRequest,
+  onlineLocationRequest,
+  locationTransform,
+} from './location.service';
 
 export const LocationContext = createContext();
 
-export const LocationContextProvider = ({children}) => {
-  const [keyword, setKeyword] = useState('Chicago');
+export const LocationContextProvider = ({children, mock = false}) => {
+  const [keyword, setKeyword] = useState('Buea');
   const [location, setLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -18,17 +22,33 @@ export const LocationContextProvider = ({children}) => {
     if (!keyword.length) {
       return;
     }
-    locationRequest(keyword.toLowerCase())
-      .then(locationTransform)
-      .then(result => {
-        setIsLoading(false);
-        setLocation(result);
-      })
-      .catch(err => {
-        setIsLoading(false);
-        setError(err);
-      });
-  }, [keyword]);
+    if (mock === true) {
+      locationRequest(keyword.toLowerCase())
+        .then(locationTransform)
+        .then(result => {
+          setError(null);
+          setIsLoading(false);
+          setLocation(result);
+        })
+        .catch(err => {
+          setIsLoading(false);
+          setError(err);
+        });
+    } else {
+      onlineLocationRequest(keyword.toLowerCase())
+        .then(locationTransform)
+        .then(result => {
+          setError(null);
+          setIsLoading(false);
+          setLocation(result);
+        })
+        .catch(err => {
+          setIsLoading(false);
+          setError(err);
+          console.log(err);
+        });
+    }
+  }, [keyword, mock]);
 
   return (
     <LocationContext.Provider
