@@ -54,7 +54,7 @@ export const SettingsScreen = ({navigation}) => {
             <Avatar.Image
               size={180}
               source={{
-                uri: photo,
+                uri: `file://${photo}`,
               }}
               backgroundColor="#2182bd"
             />
