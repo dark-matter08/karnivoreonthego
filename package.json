@@ -26,6 +26,8 @@
     "@react-navigation/stack": "^6.2.3",
     "axios": "^0.27.2",
     "camelize": "^1.0.0",
+    "firebase-admin": "^11.0.1",
+    "firebase-functions": "^3.23.0",
     "lottie-react-native": "^5.1.4",
     "react": "18.1.0",
     "react-native": "0.70.0",
