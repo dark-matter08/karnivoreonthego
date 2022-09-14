@@ -27,12 +27,12 @@ export const RestaurantContextProvider = ({children}) => {
         setError(null);
         setIsLoading(false);
         setRestaurants(results);
-        console.log('Firebase fxn Results: ', results);
+        // console.log('Firebase fxn Results: ', results);
       })
       .catch(err => {
         setIsLoading(false);
         setError(err);
-        console.log('Firebase fxn Errors: ', err);
+        // console.log('Firebase fxn Errors: ', err);
       });
   };
 

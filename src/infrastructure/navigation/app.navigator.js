@@ -8,6 +8,7 @@ import {RestaurantsNavigator} from './restaurants.navigator';
 import {SettingsNavigatior} from './settings.navigator';
 
 import {MapScreen} from '../../features/map/screens/map.screen';
+import {CheckoutScreen} from '../../features/checkout/screens/checkout.screen';
 
 import {RestaurantContextProvider} from '../../services/restaurants/restaurants.context';
 import {LocationContextProvider} from '../../services/location/location.context';
@@ -19,6 +20,7 @@ const TAB_ICON = {
   Restaurants: All.faUtensils,
   Map: All.faLocationCrosshairs,
   SettingsScreens: All.faGear,
+  Checkout: All.faShoppingCart,
 };
 
 const screenOptions = ({route}) => {
@@ -44,6 +46,7 @@ export const AppNavigator = () => {
             activeColor={theme.colors.brand.secondary}
             barStyle={{backgroundColor: theme.colors.brand.primary}}>
             <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+            <Tab.Screen name="Checkout" component={CheckoutScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
             <Tab.Screen name="SettingsScreens" component={SettingsNavigatior} />
           </Tab.Navigator>
