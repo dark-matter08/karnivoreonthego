@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {SafeAreaView, ScrollView, View} from 'react-native';
 import {List} from 'react-native-paper';
+import {Spacer} from '../../../components';
 
 import {RestaurantInfoCard} from '../components/restaurant-info-card.component';
+import {OrderButton} from '../components/restaurant-info-styles';
+import {CartContext} from '../../../services/cart/cart.context';
 
 export const RestaurantDetailScreen = ({route, navigation}) => {
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
@@ -11,6 +14,7 @@ export const RestaurantDetailScreen = ({route, navigation}) => {
   const [drinksExpanded, setDrinksExpanded] = useState(false);
 
   const {restaurant} = route.params;
+  const {addToCart} = useContext(CartContext);
   return (
     <SafeAreaView>
       <RestaurantInfoCard restaurant={restaurant} navigation={navigation} />
@@ -125,6 +129,19 @@ export const RestaurantDetailScreen = ({route, navigation}) => {
             <List.Item title="Fanta" />
           </List.Accordion>
         </ScrollView>
+        <Spacer position={'bottom'} size="lg">
+          <OrderButton
+            icon={{
+              uri: 'https://cdn-icons-png.flaticon.com/512/925/925748.png',
+            }}
+            mode="contained"
+            onPress={() => {
+              addToCart({item: 'Special', price: 1299}, restaurant);
+              navigation.navigate('Checkout');
+            }}>
+            Order Special only 12.99
+          </OrderButton>
+        </Spacer>
       </View>
     </SafeAreaView>
   );

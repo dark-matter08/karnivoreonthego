@@ -25,12 +25,12 @@ export const LocationContextProvider = ({children}) => {
         setError(null);
         setIsLoading(false);
         setLocation(result);
-        console.log('location from online fxn: ', result);
+        // console.log('location from online fxn: ', result);
       })
       .catch(err => {
         setIsLoading(false);
         setError(err);
-        console.log('error from online fxn: ', err);
+        // console.log('error from online fxn: ', err);
       });
   }, [keyword]);
 

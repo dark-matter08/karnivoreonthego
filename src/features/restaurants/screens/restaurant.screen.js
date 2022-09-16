@@ -45,7 +45,10 @@ export const RestaurantsScreen = ({navigation}) => {
   const {favourites} = useContext(FavouritesContext);
   const [barToggled, setBarToggled] = useState(false);
 
-  const isRestauListEmpty = isLoading === false && restaurants.length === 0;
+  const isRestauListEmpty =
+    isLoading === false &&
+    locationLoading === false &&
+    restaurants.length === 0;
 
   const changeFavBarState = () => {
     setBarToggled(!barToggled);

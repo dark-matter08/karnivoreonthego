@@ -1,7 +1,7 @@
 import styled from 'react-native-styled-components';
 import {theme} from '../../../infrastructure/theme';
 import {View, Text, Image} from 'react-native';
-import {Card} from 'react-native-paper';
+import {Button, Card} from 'react-native-paper';
 import {CustomText} from '../../../components';
 
 export const Info = styled(View, {
@@ -51,4 +51,11 @@ export const Icon = styled(Image, {
   marginLeft: theme.spacing.sm,
   width: 20,
   height: 20,
+});
+
+export const OrderButton = styled(Button, {
+  color: theme.colors.brand.primary,
+  padding: theme.spacing.md,
+  width: '80%',
+  alignSelf: 'center',
 });
